@@ -8,3 +8,11 @@ type HTTPPool struct {
 	self     string
 	basePath string
 }
+
+// NewHTTPPool initializes an HTTP pool of peers.
+func NewHTTPPool(self string) *HTTPPool {
+	return &HTTPPool{
+		self:     self,
+		basePath: defaultBasePath,
+	}
+}
