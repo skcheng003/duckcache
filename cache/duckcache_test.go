@@ -1,4 +1,4 @@
-package duckcache
+package cache
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ var db = map[string]string{
 }
 
 func TestGetter(t *testing.T) {
-	var f Getter = GetterFunc(func(key string) ([]byte, error) {
+	var f cache.Getter = cache.GetterFunc(func(key string) ([]byte, error) {
 		return []byte(key), nil
 	})
 

@@ -1,13 +1,14 @@
-package duckcache
+package http
 
 import (
 	"fmt"
+	"github.com/duckcache/cache"
 	"log"
 	"net/http"
 	"strings"
 )
 
-const defaultBasePath = "/_duck-cache/"
+const defaultBasePath = "/duck-cache/"
 
 // HTTPPool implement PeerPicker for a pool of HTTP peers.
 type HTTPPool struct {
@@ -45,7 +46,7 @@ func (p *HTTPPool) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	groupName := parts[0]
 	key := parts[1]
 
-	group := GetGroup(groupName)
+	group := cache.GetGroup(groupName)
 	if group == nil {
 		http.Error(w, "no such group: "+groupName, http.StatusNotFound)
 		return

@@ -1,4 +1,4 @@
-package duckcache
+package cache
 
 // ByteView holds an immutable of bytes.
 type ByteView struct {

@@ -1,4 +1,4 @@
-package duckcache
+package cache
 
 import (
 	"github.com/duckcache/lru"
